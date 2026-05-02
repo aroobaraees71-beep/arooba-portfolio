@@ -93,6 +93,18 @@ section{padding:clamp(64px,8vw,100px) 20px;}
 .about-text p:last-child{margin-bottom:0;}
 .hl{color:var(--text);font-weight:600;}
 
+  /* EXPERIENCE (NEW) */
+.exp-bg{background:var(--bg);}
+.exp-grid{display:flex;flex-direction:column;gap:20px;margin-top:44px;}
+.exp-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;}
+.exp-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:16px;}
+.exp-company{font-size:19px;font-weight:800;letter-spacing:-0.01em;}
+.exp-role{color:var(--cyan);font-weight:600;font-size:14px;margin-top:4px;}
+.exp-date{font-size:12px;color:var(--muted);font-weight:600;white-space:nowrap;}
+.exp-bullets{display:grid;gap:10px;}
+.exp-bullets li{font-size:14px;color:var(--muted2);line-height:1.7;padding-left:18px;position:relative;}
+.exp-bullets li:before{content:"•";color:var(--cyan);position:absolute;left:0;}
+
 /* SERVICES */
 .svc-bg{background:var(--bg);}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px;}
@@ -294,6 +306,65 @@ footer{border-top:1px solid var(--border);padding:28px 20px;}
 </section>
 
 <div class="divider"></div>
+
+  <!-- EXPERIENCE (NEW SECTION) -->
+<section id="experience" class="exp-bg">
+  <div class="si">
+    <div class="fi-anim"><p class="sec-label">Experience</p><h2 class="sec-title">Where I've Built<br>These <span class="gt">Systems</span></h2></div>
+    
+    <div class="exp-grid">
+      <!-- Job 1 -->
+      <div class="exp-card fi-anim">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">X Window Solutions</div>
+            <div class="exp-role">GHL Expert &amp; Meta Ads Manager</div>
+          </div>
+          <div class="exp-date">Feb 2026 — Present</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Managing Meta Ads campaigns and GoHighLevel CRM systems for US-based clients</li>
+          <li>Built complete funnels, automations, and lead generation workflows from scratch</li>
+          <li>Integrated Twilio A2P, calendar sync, and third-party tools via Make.com</li>
+        </ul>
+      </div>
+      
+      <!-- Job 2 -->
+      <div class="exp-card fi-anim">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Eureka Digital Marketing Academy</div>
+            <div class="exp-role">CRM &amp; Digital Marketing Specialist</div>
+          </div>
+          <div class="exp-date">Oct 2025 — Present</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built 10+ client funnels, landing pages, and GHL automation workflows</li>
+          <li>Managed full-stack GHL development including websites, pipelines, and email systems</li>
+          <li>Delivered USA-client-ready marketing solutions under direct mentorship</li>
+        </ul>
+      </div>
+      
+      <!-- Job 3 -->
+      <div class="exp-card fi-anim">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Silverlight Research Group</div>
+            <div class="exp-role">Marketing Research Analyst</div>
+          </div>
+          <div class="exp-date">Aug 2025 — Sept 2025</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Identified and recruited industry experts for global consulting projects</li>
+          <li>Conducted targeted research and strategic outreach for private equity clients</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 
 <!-- SERVICES -->
 <section id="services" class="svc-bg">

@@ -715,45 +715,41 @@ document.querySelectorAll('.fi-anim').forEach(el=>obs.observe(el));
 function toggleMenu(){document.getElementById('mobMenu').classList.toggle('open');}
   
 
-<!-- EmailJS Library -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+// CONTACT FORM
+// ==================== EMAILJS CONFIG - YOUR CREDENTIALS ====================
+const EMAILJS_SERVICE_ID = "service_byfmije";
+const EMAILJS_TEMPLATE_ID = "template_rhdqzgm";
+const EMAILJS_PUBLIC_KEY = "l5bwzLxNbChNj3hnn";
 
-<!-- Contact Form Script -->
-<script>
-  // ==================== EMAILJS CONFIG ====================
-  const EMAILJS_SERVICE_ID = "service_byfmije";
-  const EMAILJS_TEMPLATE_ID = "template_rhdqzgm";
-  const EMAILJS_PUBLIC_KEY = "l5bwzLxNbChNj3hnn";
+// Initialize EmailJS
+(function() {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+})();
 
-  // Initialize EmailJS
-  (function() {
-    emailjs.init(EMAILJS_PUBLIC_KEY);
-  })();
+// Form Submission Handler
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const btn = this.querySelector('.fsub');
+  const originalText = btn.innerHTML;
+  btn.innerHTML = 'Sending...';
+  btn.disabled = true;
 
-  // Form Submission
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const btn = this.querySelector('.fsub');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = 'Sending...';
-    btn.disabled = true;
-
-    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
-      .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-        document.getElementById('formFields').style.display = 'none';
-        document.getElementById('formOk').style.display = 'block';
-      })
-      .catch(function(error) {
-        console.error('FAILED...', error);
-        alert('Error: ' + JSON.stringify(error));
-      })
-      .finally(function() {
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-      });
-  });
+  emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+    .then(() => {
+      document.getElementById('formFields').style.display = 'none';
+      document.getElementById('formOk').style.display = 'block';
+      this.reset();
+    })
+    .catch((error) => {
+      alert('Oops! Something went wrong. Please try again or email me directly at aroobaraees71@gmail.com');
+      console.error('EmailJS Error:', error);
+    })
+    .finally(() => {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    });
+});
 </script>
 </body>
 </html>

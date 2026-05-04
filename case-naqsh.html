@@ -108,11 +108,56 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;}
   </div>
 
   <div class="cs-section fi-anim">
-    <p class="cs-sec-label">Visuals</p>
-    <h2 class="cs-sec-title">Campaign Creatives &amp; Content</h2>
-    <div class="cs-img-block"><div class="cs-img-ph" style="background:linear-gradient(135deg,rgba(244,63,94,0.1),rgba(225,29,72,0.08));"><span class="cs-img-ph-ico">👕</span><span class="cs-img-ph-lbl">AI Ad Creatives — Add Screenshot Here</span></div><div class="cs-img-caption">AI-generated ad visuals · Brand-aligned clothing campaign</div></div>
-    <div class="cs-img-block"><div class="cs-img-ph" style="background:linear-gradient(135deg,rgba(225,29,72,0.08),rgba(244,63,94,0.1));"><span class="cs-img-ph-ico">🎥</span><span class="cs-img-ph-lbl">Canva Videos &amp; Posts — Add Screenshot Here</span></div><div class="cs-img-caption">Platform-native videos · Carousel posts · Content calendar</div></div>
+  <p class="cs-sec-label">Campaign Videos</p>
+  <h2 class="cs-sec-title">Video Ads Gallery</h2>
+  <p class="cs-text" style="margin-bottom:24px;">Click any video to play in full screen popup.</p>
+
+  <!-- VIDEO GALLERY -->
+  <div class="video-gallery" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+    
+    <!-- Video 1 -->
+    <div class="video-card" onclick="openVideoModal('naqsh ferrari.mp4', 'Naqsh Ferrari Ad')">
+      <div style="position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+        <img src="https://via.placeholder.com/600x340/1a1a2e/ffffff?text=Naqsh+Ferrari+Ad" 
+             style="width:100%;display:block;" alt="Naqsh Ferrari Ad">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(124,58,237,0.9);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:28px;color:white;margin-left:4px;">▶</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <div style="font-weight:700;font-size:15px;">Naqsh Ferrari Ad</div>
+        <div style="font-size:12px;color:var(--muted2);">AI Generated • 15 sec</div>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-card" onclick="openVideoModal('naqsh ferrari edited.mp4', 'Naqsh Brand Ad 2')">
+      <div style="position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+        <img src="https://via.placeholder.com/600x340/1a1a2e/ffffff?text=Naqsh+Brand+Ad+2" 
+             style="width:100%;display:block;" alt="Naqsh Brand Ad 2">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(124,58,237,0.9);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:28px;color:white;margin-left:4px;">▶</span>
+        </div>
+      </div>
+      <div style="margin-top:12px;">
+        <div style="font-weight:700;font-size:15px;">Naqsh Brand Ad 2</div>
+        <div style="font-size:12px;color:var(--muted2);">AI Generated • 18 sec</div>
+      </div>
+    </div>
+
   </div>
+</div>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:9999;align-items:center;justify-content:center;">
+  <div style="max-width:900px;width:95%;position:relative;">
+    <span onclick="closeVideoModal()" style="position:absolute;top:-40px;right:0;color:white;font-size:32px;cursor:pointer;">&times;</span>
+    <video id="modalVideo" controls style="width:100%;border-radius:12px;box-shadow:0 0 60px rgba(124,58,237,0.4);">
+      Your browser does not support the video tag.
+    </video>
+    <div id="modalTitle" style="color:white;text-align:center;margin-top:16px;font-size:18px;font-weight:700;"></div>
+  </div>
+</div>
 
   <div class="cs-section fi-anim">
     <p class="cs-sec-label">Results</p>
@@ -142,4 +187,29 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;}
 
 <footer><div class="foot-copy">© 2025 Arooba Raees</div></footer>
 <script>const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');}),{threshold:0.08});document.querySelectorAll('.fi-anim').forEach(el=>obs.observe(el));</script>
+  <script>
+  function openVideoModal(videoSrc, title) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    const titleEl = document.getElementById('modalTitle');
+    
+    video.src = videoSrc;
+    titleEl.innerText = title;
+    modal.style.display = 'flex';
+    video.play();
+  }
+
+  function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    video.pause();
+    video.src = '';
+    modal.style.display = 'none';
+  }
+
+  // Close modal when clicking outside
+  document.getElementById('videoModal').addEventListener('click', function(e) {
+    if (e.target === this) closeVideoModal();
+  });
+</script>
 </body></html>

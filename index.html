@@ -604,43 +604,88 @@ footer{border-top:1px solid var(--border);padding:28px 20px;}
 <div class="divider"></div>
 
 <!-- CONTACT -->
-<div class="cf">
-  <form id="contactForm">
-    <div id="formFields">
-      <div class="fl">
-        <label>Your Name</label>
-        <input type="text" name="from_name" class="fi" placeholder="John Smith" required>
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      
+      <!-- LEFT SIDE - Contact Info -->
+      <div>
+        <h2 class="ci-title">Let's Work Together</h2>
+        <p class="ci-desc">
+          Have a project in mind? I'd love to hear about it. 
+          Fill out the form or reach out directly — I'll get back to you within 24 hours.
+        </p>
+
+        <div class="cd">
+          <div class="cd-icon">✉️</div>
+          <div>
+            <div class="cd-lbl">EMAIL</div>
+            <div class="cd-val"><a href="mailto:aroobaraees71@gmail.com">aroobaraees71@gmail.com</a></div>
+          </div>
+        </div>
+
+        <div class="cd">
+          <div class="cd-icon">📍</div>
+          <div>
+            <div class="cd-lbl">LOCATION</div>
+            <div class="cd-val">Karachi, Pakistan</div>
+          </div>
+        </div>
+
+        <div class="cd">
+          <div class="cd-icon">📱</div>
+          <div>
+            <div class="cd-lbl">WHATSAPP</div>
+            <div class="cd-val"><a href="https://wa.me/923001234567" target="_blank">+92 300 1234567</a></div>
+          </div>
+        </div>
       </div>
-      <div class="fl">
-        <label>Email Address</label>
-        <input type="email" name="from_email" class="fi" placeholder="john@company.com" required>
+
+      <!-- RIGHT SIDE - Working Form -->
+      <div>
+        <div class="cf">
+          <form id="contactForm">
+            <div id="formFields">
+              <div class="fl">
+                <label>Your Name</label>
+                <input type="text" name="from_name" class="fi" placeholder="John Smith" required>
+              </div>
+              <div class="fl">
+                <label>Email Address</label>
+                <input type="email" name="from_email" class="fi" placeholder="john@company.com" required>
+              </div>
+              <div class="fl">
+                <label>What Do You Need?</label>
+                <select name="service" class="fs fi" required>
+                  <option value="">Select a service...</option>
+                  <option>GHL Full Setup / Build</option>
+                  <option>CRM Automation &amp; Workflows</option>
+                  <option>Meta Ads Management</option>
+                  <option>Twilio &amp; A2P Setup</option>
+                  <option>Full Marketing System</option>
+                  <option>Free GHL Audit</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="fl">
+                <label>Message</label>
+                <textarea name="message" class="ft" placeholder="Tell me about your project..." required></textarea>
+              </div>
+              <button type="submit" class="fsub">Send Message →</button>
+            </div>
+            <div class="form-ok" id="formOk">✅ Thank you! I'll reply within 24 hours.</div>
+          </form>
+        </div>
       </div>
-      <div class="fl">
-        <label>What Do You Need?</label>
-        <select name="service" class="fs fi" required>
-          <option value="">Select a service...</option>
-          <option>GHL Full Setup / Build</option>
-          <option>CRM Automation &amp; Workflows</option>
-          <option>Meta Ads Management</option>
-          <option>Twilio &amp; A2P Setup</option>
-          <option>Full Marketing System</option>
-          <option>Free GHL Audit</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="fl">
-        <label>Message</label>
-        <textarea name="message" class="ft" placeholder="Tell me about your project..." required></textarea>
-      </div>
-      <button type="submit" class="fsub">Send Message →</button>
+
     </div>
-    <div class="form-ok" id="formOk">✅ Thank you! I'll reply within 24 hours.</div>
-  </form>
-</div>
+  </div>
+</section>
 <!-- FOOTER -->
 <footer>
   <div class="foot-i">
-    <div class="foot-copy">© 2025 Arooba Raees · Built with intention.</div>
+    <div class="foot-copy">© 2026 Arooba Raees · Built with intention.</div>
     <div class="foot-links">
       <a href="#hero">Back to Top ↑</a>
       <a href="mailto:aroobaraees71@gmail.com">Email</a>

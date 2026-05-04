@@ -714,18 +714,15 @@ document.querySelectorAll('.fi-anim').forEach(el=>obs.observe(el));
 // MOBILE MENU
 function toggleMenu(){document.getElementById('mobMenu').classList.toggle('open');}
 
-// CONTACT FORM
-// ==================== EMAILJS CONFIG - YOUR CREDENTIALS ====================
+// ==================== EMAILJS CONFIG ====================
 const EMAILJS_SERVICE_ID = "service_byfmije";
 const EMAILJS_TEMPLATE_ID = "template_rhdqzgm";
 const EMAILJS_PUBLIC_KEY = "l5bwzLxNbChNj3hnn";
 
-// Initialize EmailJS
 (function() {
   emailjs.init(EMAILJS_PUBLIC_KEY);
 })();
 
-// Form Submission Handler
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
   
@@ -735,16 +732,16 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   btn.disabled = true;
 
   emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
-    .then(() => {
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
       document.getElementById('formFields').style.display = 'none';
       document.getElementById('formOk').style.display = 'block';
-      this.reset();
     })
-    .catch((error) => {
-      alert('Oops! Something went wrong. Please try again or email me directly at aroobaraees71@gmail.com');
-      console.error('EmailJS Error:', error);
+    .catch(function(error) {
+      console.error('FAILED...', error);
+      alert('Error: ' + JSON.stringify(error));
     })
-    .finally(() => {
+    .finally(function() {
       btn.innerHTML = originalText;
       btn.disabled = false;
     });

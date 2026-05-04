@@ -112,185 +112,7 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;}
   <h2 class="cs-sec-title">Video Ads Gallery</h2>
   <p class="cs-text" style="margin-bottom:24px;">Click any video to play in full screen popup.</p>
 
-  <!-- VIDEO GALLERY -->
-  <div class="video-gallery" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
-    
-    <!-- Video 1 -->
-    <div class="video-card" onclick="openVideoModal('naqsh ferrari.mp4', 'Naqsh Ferrari Ad')">
-      <div style="position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
-        <img src="https://via.placeholder.com/600x340/1a1a2e/ffffff?text=Naqsh+Ferrari+Ad" 
-             style="width:100%;display:block;" alt="Naqsh Ferrari Ad">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(124,58,237,0.9);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:28px;color:white;margin-left:4px;">▶</span>
-        </div>
-      </div>
-      <div style="margin-top:12px;">
-        <div style="font-weight:700;font-size:15px;">Naqsh Ferrari Ad</div>
-        <div style="font-size:12px;color:var(--muted2);">AI Generated • 15 sec</div>
-      </div>
-    </div>
-
-    <!-- Video 2 -->
-    <div class="video-card" onclick="openVideoModal('naqsh ferrari edited.mp4', 'Naqsh Brand Ad 2')">
-      <div style="position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
-        <img src="https://via.placeholder.com/600x340/1a1a2e/ffffff?text=Naqsh+Brand+Ad+2" 
-             style="width:100%;display:block;" alt="Naqsh Brand Ad 2">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(124,58,237,0.9);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:28px;color:white;margin-left:4px;">▶</span>
-        </div>
-      </div>
-      <div style="margin-top:12px;">
-        <div style="font-weight:700;font-size:15px;">Naqsh Brand Ad 2</div>
-        <div style="font-size:12px;color:var(--muted2);">AI Generated • 18 sec</div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-  <!-- Video 3 -->
-    <div onclick="openVideoModal('naqsh ad 3.mp4','Naqsh Ad 3')" style="cursor:pointer;">
-      <div style="position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
-        <img src="https://via.placeholder.com/600x340/1a1a2e/ffffff?text=Naqsh+Ad+3" style="width:100%;display:block;" alt="">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(124,58,237,0.9);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:22px;color:white;margin-left:3px;">▶</span>
-        </div>
-      </div>
-      <div style="margin-top:10px;font-weight:600;">Naqsh Ad 3</div>
-    </div>
-
-  <!-- Video 4 -->
-    <div onclick="openVideoModal('naqsh ad 4.mp4','Naqsh Ad 4')" style="cursor:pointer;">
-      <div style="position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
-        <img src="https://via.placeholder.com/600x340/1a1a2e/ffffff?text=Naqsh+Ad+4" style="width:100%;display:block;" alt="">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(124,58,237,0.9);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:22px;color:white;margin-left:3px;">▶</span>
-        </div>
-      </div>
-      <div style="margin-top:10px;font-weight:600;">Naqsh Ad 4</div>
-    </div>
-
-  <!-- Video 5 -->
-    <div onclick="openVideoModal('naqsh ad 5.mp4','Naqsh Ad 5')" style="cursor:pointer;">
-      <div style="position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
-        <img src="https://via.placeholder.com/600x340/1a1a2e/ffffff?text=Naqsh+Ad+5" style="width:100%;display:block;" alt="">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(124,58,237,0.9);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:22px;color:white;margin-left:3px;">▶</span>
-        </div>
-      </div>
-      <div style="margin-top:10px;font-weight:600;">Naqsh Ad 5</div>
-    </div>
-
-  </div>
-</div>
-  
-<!-- IMPROVED VIDEO MODAL -->
-<div id="videoModal" onclick="closeVideoModal()" 
-     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-            background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; padding:20px;">
-
-  <div onclick="event.stopImmediatePropagation()" 
-       style="max-width:820px; width:100%; position:relative; background:#111; border-radius:16px; overflow:hidden; box-shadow:0 0 60px rgba(124,58,237,0.5);">
-
-    <!-- Close Button -->
-    <div onclick="closeVideoModal()" 
-         style="position:absolute; top:12px; right:12px; background:rgba(0,0,0,0.6); 
-                color:white; width:36px; height:36px; border-radius:50%; 
-                display:flex; align-items:center; justify-content:center; 
-                font-size:22px; cursor:pointer; z-index:10;">
-      &times;
-    </div>
-
-    <!-- Video -->
-    <video id="modalVideo" controls 
-           style="width:100%; max-height:70vh; display:block; background:#000;">
-      Your browser does not support the video tag.
-    </video>
-
-    <!-- Video Title -->
-    <div id="modalTitle" 
-         style="padding:14px 20px; color:white; font-size:15px; font-weight:600; text-align:center; background:#1a1a1a;">
-    </div>
-
-  </div>
-</div>
-
-  <div class="cs-section fi-anim">
-    <p class="cs-sec-label">Results</p>
-    <h2 class="cs-sec-title">What Was Delivered</h2>
-    <div class="results-grid">
-      <div class="res-card"><div class="res-val">Full</div><div class="res-lbl">Campaign strategy &amp; assets delivered</div></div>
-      <div class="res-card"><div class="res-val">AI + Canva</div><div class="res-lbl">High-quality creatives on budget</div></div>
-      <div class="res-card"><div class="res-val">Multi</div><div class="res-lbl">Platform organic reach strategy</div></div>
-      <div class="res-card"><div class="res-val">Ready</div><div class="res-lbl">Content calendar for ongoing posting</div></div>
-    </div>
-  </div>
-
-  <div class="cs-section fi-anim">
-    <p class="cs-sec-label">Tools Used</p>
-    <h2 class="cs-sec-title">Tech Stack</h2>
-    <div class="tools-row"><span class="tp">AI Creative Tools</span><span class="tp">Canva</span><span class="tp">Meta Ads</span><span class="tp">Content Strategy</span><span class="tp">Video Editing</span></div>
-  </div>
-
-</div>
-  <!-- NEW: SOCIAL MEDIA POSTS SECTION -->
-<div class="cs-section fi-anim">
-  <p class="cs-sec-label">Social Media Management</p>
-  <h2 class="cs-sec-title">Instagram &amp; Facebook Posts</h2>
-  <p class="cs-text" style="margin-bottom:24px;">We designed and scheduled 15+ posts. Here are some of the best-performing ones:</p>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
-    
-    <div>
-      <img src="naqsh-post-1.jpg" style="width:100%;border-radius:12px;border:1px solid var(--border);" alt="Naqsh Post 1">
-      <div style="margin-top:8px;font-size:13px;color:var(--muted2);">Post 1 — Product Launch</div>
-    </div>
-    
-    <div>
-      <img src="naqsh-post-2.jpg" style="width:100%;border-radius:12px;border:1px solid var(--border);" alt="Naqsh Post 2">
-      <div style="margin-top:8px;font-size:13px;color:var(--muted2);">Post 2 — Festival Special</div>
-    </div>
-    
-    <div>
-      <img src="naqsh-post-3.jpg" style="width:100%;border-radius:12px;border:1px solid var(--border);" alt="Naqsh Post 3">
-      <div style="margin-top:8px;font-size:13px;color:var(--muted2);">Post 3 — Brand Story</div>
-    </div>
-
-  </div>
-</div>
-
-  <!-- NEW: SOCIAL MEDIA POSTS SECTION -->
-<div class="cs-section fi-anim">
-  <p class="cs-sec-label">Social Media Management</p>
-  <h2 class="cs-sec-title">Instagram &amp; Facebook Posts</h2>
-  <p class="cs-text" style="margin-bottom:24px;">We designed and scheduled 15+ posts. Here are some of the best-performing ones:</p>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
-    
-    <div>
-      <img src="naqsh post 1.jpg" style="width:100%;border-radius:12px;border:1px solid var(--border);" alt="Naqsh Post 1">
-      <div style="margin-top:8px;font-size:13px;color:var(--muted2);">Post 1 — Product Launch</div>
-    </div>
-    
-    <div>
-      <img src="naqsh post 2.jpg" style="width:100%;border-radius:12px;border:1px solid var(--border);" alt="Naqsh Post 2">
-      <div style="margin-top:8px;font-size:13px;color:var(--muted2);">Post 2 — Festival Special</div>
-    </div>
-    
-    <div>
-      <img src="naqsh post 3.jpg" style="width:100%;border-radius:12px;border:1px solid var(--border);" alt="Naqsh Post 3">
-      <div style="margin-top:8px;font-size:13px;color:var(--muted2);">Post 3 — Brand Story</div>
-    </div>
-
-  </div>
-</div>
-
-  <div class="cs-section fi-anim">
-  <p class="cs-sec-label">Campaign Videos</p>
-  <h2 class="cs-sec-title">Video Ads Gallery</h2>
-  <p class="cs-text" style="margin-bottom:24px;">Click any video to play in popup. We created 5 high-performing AI ads for Naqsh.</p>
-
- <!-- VIDEO GALLERY -->
+    <!-- VIDEO GALLERY -->
 <div class="cs-section fi-anim">
   <p class="cs-sec-label">Campaign Videos</p>
   <h2 class="cs-sec-title">Video Ads Gallery</h2>
@@ -400,6 +222,58 @@ footer{border-top:1px solid var(--border);padding:24px 20px;text-align:center;}
 
   </div>
 </div>
+  
+<!-- IMPROVED VIDEO MODAL -->
+<div id="videoModal" onclick="closeVideoModal()" 
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+            background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; padding:20px;">
+
+  <div onclick="event.stopImmediatePropagation()" 
+       style="max-width:820px; width:100%; position:relative; background:#111; border-radius:16px; overflow:hidden; box-shadow:0 0 60px rgba(124,58,237,0.5);">
+
+    <!-- Close Button -->
+    <div onclick="closeVideoModal()" 
+         style="position:absolute; top:12px; right:12px; background:rgba(0,0,0,0.6); 
+                color:white; width:36px; height:36px; border-radius:50%; 
+                display:flex; align-items:center; justify-content:center; 
+                font-size:22px; cursor:pointer; z-index:10;">
+      &times;
+    </div>
+
+    <!-- Video -->
+    <video id="modalVideo" controls 
+           style="width:100%; max-height:70vh; display:block; background:#000;">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Video Title -->
+    <div id="modalTitle" 
+         style="padding:14px 20px; color:white; font-size:15px; font-weight:600; text-align:center; background:#1a1a1a;">
+    </div>
+
+  </div>
+</div>
+
+  <div class="cs-section fi-anim">
+    <p class="cs-sec-label">Results</p>
+    <h2 class="cs-sec-title">What Was Delivered</h2>
+    <div class="results-grid">
+      <div class="res-card"><div class="res-val">Full</div><div class="res-lbl">Campaign strategy &amp; assets delivered</div></div>
+      <div class="res-card"><div class="res-val">AI + Canva</div><div class="res-lbl">High-quality creatives on budget</div></div>
+      <div class="res-card"><div class="res-val">Multi</div><div class="res-lbl">Platform organic reach strategy</div></div>
+      <div class="res-card"><div class="res-val">Ready</div><div class="res-lbl">Content calendar for ongoing posting</div></div>
+    </div>
+  </div>
+
+  <div class="cs-section fi-anim">
+    <p class="cs-sec-label">Tools Used</p>
+    <h2 class="cs-sec-title">Tech Stack</h2>
+    <div class="tools-row"><span class="tp">AI Creative Tools</span><span class="tp">Canva</span><span class="tp">Meta Ads</span><span class="tp">Content Strategy</span><span class="tp">Video Editing</span></div>
+  </div>
+
+</div>
+ 
+ 
 
 <div class="cs-live-wrap">
   <div class="cs-live-title">Campaign Assets Ready</div>

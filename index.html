@@ -604,45 +604,39 @@ footer{border-top:1px solid var(--border);padding:28px 20px;}
 <div class="divider"></div>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="si">
-    <div class="fi-anim"><p class="sec-label">Get In Touch</p><h2 class="sec-title">Let's Build Something<br><span class="gt">Together</span></h2></div>
-    <div class="contact-grid">
-      <div class="fi-anim">
-        <div class="ci-title">Available for Remote Projects</div>
-        <div class="ci-desc">Based in Pakistan — working US timezone when needed. Open to freelance projects, retainer roles, and remote full-time positions with US and global clients.</div>
-        <div class="cd"><div class="cd-icon">📧</div><div><div class="cd-lbl">Email</div><div class="cd-val"><a href="mailto:aroobaraees71@gmail.com">aroobaraees71@gmail.com</a></div></div></div>
-        <div class="cd"><div class="cd-icon">💼</div><div><div class="cd-lbl">LinkedIn</div><div class="cd-val"><a href="https://linkedin.com/in/aroobaraees" target="_blank" rel="noopener">linkedin.com/in/aroobaraees</a></div></div></div>
-        <div class="cd"><div class="cd-icon">🌐</div><div><div class="cd-lbl">Portfolio</div><div class="cd-val"><a href="https://myhotel321.my.canva.site/aroobaraees" target="_blank" rel="noopener">Canva Portfolio</a></div></div></div>
-        <div class="cd"><div class="cd-icon">📍</div><div><div class="cd-lbl">Location</div><div class="cd-val">Pakistan 🇵🇰 · Remote Globally</div></div></div>
+<div class="cf">
+  <form id="contactForm">
+    <div id="formFields">
+      <div class="fl">
+        <label>Your Name</label>
+        <input type="text" name="from_name" class="fi" placeholder="John Smith" required>
       </div>
-      <div class="fi-anim">
-        <div class="cf">
-          <div id="formFields">
-            <div class="fl"><label>Your Name</label><input type="text" class="fi" placeholder="John Smith"/></div>
-            <div class="fl"><label>Email Address</label><input type="email" class="fi" placeholder="john@company.com"/></div>
-            <div class="fl"><label>What Do You Need?</label>
-              <select class="fs fi">
-                <option value="">Select a service...</option>
-                <option>GHL Full Setup / Build</option>
-                <option>CRM Automation &amp; Workflows</option>
-                <option>Meta Ads Management</option>
-                <option>Twilio &amp; A2P Setup</option>
-                <option>Full Marketing System</option>
-                <option>Free GHL Audit</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="fl"><label>Message</label><textarea class="ft" placeholder="Tell me about your project..."></textarea></div>
-            <button class="fsub" onclick="submitForm()">Send Message →</button>
-          </div>
-          <div class="form-ok" id="formOk">✅ Message sent! I'll get back to you within 24 hours.</div>
-        </div>
+      <div class="fl">
+        <label>Email Address</label>
+        <input type="email" name="from_email" class="fi" placeholder="john@company.com" required>
       </div>
+      <div class="fl">
+        <label>What Do You Need?</label>
+        <select name="service" class="fs fi" required>
+          <option value="">Select a service...</option>
+          <option>GHL Full Setup / Build</option>
+          <option>CRM Automation &amp; Workflows</option>
+          <option>Meta Ads Management</option>
+          <option>Twilio &amp; A2P Setup</option>
+          <option>Full Marketing System</option>
+          <option>Free GHL Audit</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fl">
+        <label>Message</label>
+        <textarea name="message" class="ft" placeholder="Tell me about your project..." required></textarea>
+      </div>
+      <button type="submit" class="fsub">Send Message →</button>
     </div>
-  </div>
-</section>
-
+    <div class="form-ok" id="formOk">✅ Thank you! I'll reply within 24 hours.</div>
+  </form>
+</div>
 <!-- FOOTER -->
 <footer>
   <div class="foot-i">
@@ -676,7 +670,40 @@ document.querySelectorAll('.fi-anim').forEach(el=>obs.observe(el));
 function toggleMenu(){document.getElementById('mobMenu').classList.toggle('open');}
 
 // CONTACT FORM
-function submitForm(){document.getElementById('formFields').style.display='none';document.getElementById('formOk').style.display='block';}
+// ==================== EMAILJS CONFIG - YOUR CREDENTIALS ====================
+const EMAILJS_SERVICE_ID = "service_byfmije";
+const EMAILJS_TEMPLATE_ID = "template_rhdqzgm";
+const EMAILJS_PUBLIC_KEY = "l5bwzLxNbChNj3hnn";
+
+// Initialize EmailJS
+(function() {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+})();
+
+// Form Submission Handler
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const btn = this.querySelector('.fsub');
+  const originalText = btn.innerHTML;
+  btn.innerHTML = 'Sending...';
+  btn.disabled = true;
+
+  emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+    .then(() => {
+      document.getElementById('formFields').style.display = 'none';
+      document.getElementById('formOk').style.display = 'block';
+      this.reset();
+    })
+    .catch((error) => {
+      alert('Oops! Something went wrong. Please try again or email me directly at aroobaraees71@gmail.com');
+      console.error('EmailJS Error:', error);
+    })
+    .finally(() => {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    });
+});
 </script>
 </body>
 </html>
